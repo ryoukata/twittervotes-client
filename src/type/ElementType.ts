@@ -1,3 +1,3 @@
-import {ApiData} from './DataType';
+import {ResponseData} from './DataType';
 
-export type CreateElement = <Element>(resultApi: ApiData[]) => JSX.Element[];
+export type CreateElement = <Element>(resultApi: ResponseData[]) => JSX.Element[];

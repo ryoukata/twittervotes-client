@@ -1,3 +1,3 @@
-import {ApiData} from './DataType';
+import {ResponseData} from './DataType';
 
-export type ApiHandler = <T>(arg?: T) => Promise<ApiData[]>;
+export type ApiHandler = <T>(arg?: T) => Promise<ResponseData[]>;
