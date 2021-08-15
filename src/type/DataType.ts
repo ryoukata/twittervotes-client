@@ -1,11 +1,15 @@
-// APIから取得したデータの型
-export type ApiData = {
-  id: string
-  title: string
-};
+import { type } from "os";
 
 // 投票項目の型
-export type PollItem = ApiData & {
+export type PollItems = {
   id: string
   title: string
 }
+
+// 調査項目作成後のリダイレクト先
+export type DetailPathOfSurveyItem = {
+  location: string
+}
+
+// APIレスポンスの型
+export type ResponseData = PollItems | DetailPathOfSurveyItem;
