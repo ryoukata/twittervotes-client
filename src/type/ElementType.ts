@@ -1,3 +1,3 @@
-import {ResponseData} from './DataType';
+import {PollItems} from './DataType';
 
-export type CreateElement = <Element>(resultApi: ResponseData[]) => JSX.Element[];
+export type CreateElement = (resultApi: PollItems[]) => JSX.Element[];
