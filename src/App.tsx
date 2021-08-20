@@ -1,7 +1,8 @@
 import React from 'react';
 // import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { SurveyList } from './contents/SurveyList'
+import { SurveyList } from './contents/SurveyList';
+import { CreateSurveyItem } from './contents/CreateSurveyItem';
 
 function App() {
   return (
@@ -11,8 +12,11 @@ function App() {
           <Route exact path="/">
             <SurveyList />
           </Route>
-          <Route path="/test">
-            <p>Test Routing!</p>
+          <Route path="/new">
+            <CreateSurveyItem />
+          </Route>
+          <Route>
+            
           </Route>
         </Switch>
       </div>

@@ -1,3 +1,5 @@
-import {ResponseData} from './DataType';
+import {PollItems, DetailPathOfSurveyItem} from './DataType';
 
-export type ApiHandler = <T>(arg?: T) => Promise<ResponseData[]>;
+export type SurveyListHandler = <T>(arg?: T) => Promise<PollItems[]>;
+
+export type CreateItemHandler = <T>(arg?: string) => Promise<Response>;

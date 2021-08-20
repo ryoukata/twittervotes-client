@@ -1,18 +1,18 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {ListElement} from './ListElement';
-import {ApiHandler} from '../type/ApiType';
+import {SurveyListHandler} from '../type/ApiType';
 import {CreateElement} from '../type/ElementType';
-import {ApiData} from '../type/DataType';
+import {PollItems} from '../type/DataType';
 
 interface ListProperty {
   id: string
   // listElement: JSX.Element
-  apiHandler: ApiHandler
+  apiHandler: SurveyListHandler
   createElement: CreateElement
 }
 
 export const List: React.FC<ListProperty> = (props: ListProperty) => {
-  const [apiData, setApiData] = useState<ApiData[]>([]);
+  const [apiData, setApiData] = useState<PollItems[]>([]);
   const intervalRef = useRef(apiData);
   useEffect(() => {
     intervalRef.current = apiData;
