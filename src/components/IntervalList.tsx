@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {ListElement} from './ListElement';
 import {SurveyListHandler} from '../type/ApiType';
 import {CreateElement} from '../type/ElementType';
