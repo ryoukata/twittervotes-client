@@ -1,5 +1,4 @@
 import React from 'react';
-import {CreateItemHandler} from '../type/ApiType';
 import {createSurveyItem} from '../api/createSurveyItem';
 
 interface ButtonProperty {
@@ -12,7 +11,9 @@ interface ButtonProperty {
 export const Button: React.FC<ButtonProperty> = (props: ButtonProperty) => {
 
   const createSurveyItemBtn = () => createSurveyItem(props.funcArg).then((response => {
-    location.href = "http://localhost:3000/view?poll=" + response.headers.get('Location');
+    setInterval(() => {
+      window.location.href = "http://localhost:3000/view?poll=" + response.headers.get('Location');
+    }, 10000);
   }));
   
   return (
