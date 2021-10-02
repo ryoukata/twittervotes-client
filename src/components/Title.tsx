@@ -5,11 +5,11 @@ interface TitleProperty {
   description?: string
 }
 
-export const Title: React.FC<TitleProperty> = (props: TitleProperty) => {
+export const Title: React.FC<TitleProperty> = ({name, description}) => {
   return (
     <>
-    <h1>{props.name}</h1>
-    <p>{props.description}</p>
+      <h1>{name}</h1>
+      {description && <p>{description}</p>}
     </>
   )
 }
