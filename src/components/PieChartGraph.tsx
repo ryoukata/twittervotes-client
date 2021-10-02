@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { PieChart, Pie, Tooltip, ResponsiveContainer, Cell } from "recharts";
+import { PieChart, Pie } from "recharts";
 
 interface dataProperty {
   data: Record<string, number>
 }
 
-export const PieChartGraph: React.FC<dataProperty> = ({data}: dataProperty) => {
+export const PieChartGraph: React.FC<dataProperty> = ({data}) => {
   const [graphData, setGraphDataObj] = useState(new Array<Object>());
 
   useEffect(() => {
@@ -14,7 +14,6 @@ export const PieChartGraph: React.FC<dataProperty> = ({data}: dataProperty) => {
       dataObj.push({name: map[0], value: map[1]});
     });
     setGraphDataObj(dataObj);
-    console.log("graphData", graphData);
   }, [data]);
 
   return (

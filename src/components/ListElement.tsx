@@ -1,21 +1,18 @@
 import React from 'react';
-// import {ApiData} from '../type/DataType';
 
 interface ListElementProperty {
   id?: string
   value?: string
   element?: JSX.Element
+  elements?: JSX.Element[]
 }
 
-export const ListElement: React.FC<ListElementProperty> = (props: ListElementProperty) => {
-  // const [pollsList, setPollsList] = useState<ApiData[]>([]);
-  // useEffect(() => {
-  //   props.handler().then(polls => {
-  //     setPollsList(polls);
-  //   });
-  // }, []);
+export const ListElement: React.FC<ListElementProperty> = ({id, elements}) => {
   return (
-    // <li><a href="/view?poll=polls/pollID">Poll Title</a></li>
-    <li>{props.element}</li>
+    <ul id={id}>
+      {
+        elements?.map((element) => element)
+      }
+    </ul>
   )
 }

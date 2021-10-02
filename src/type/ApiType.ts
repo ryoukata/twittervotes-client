@@ -1,5 +1,7 @@
-import {PollItems, DetailPathOfSurveyItem} from './DataType';
+import {RequestData, ResponseData} from './DataType';
 
-export type SurveyListHandler = <T>(arg?: T) => Promise<PollItems[]>;
+// API呼び出し関数の型
+export type Handler<T extends RequestData, U extends ResponseData | Response> = (arg?: T) => Promise<U[] | U>;
 
-export type CreateItemHandler = <T>(arg?: string) => Promise<Response>;
+// APIレスポンスのデータからHTMLタグを生成する関数の型
+export type CreateElement<T extends ResponseData> = (resultApi: T[]) => JSX.Element[];
