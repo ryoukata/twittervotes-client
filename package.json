@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -43,6 +43,10 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.7"
+    "@types/react-router-dom": "^5.1.7",
+    "@types/recharts": "^1.8.21",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0"
   }
 }
