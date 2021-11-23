@@ -56,9 +56,7 @@ jobs:
     # 環境変数の設定を追加
     - name: Build the Docker image 
       run: |
-        docker build -t ghcr.io/ryoukata/twitter-votes-app/twittervotes-client
-    #    --build-arg MONGO_PASS=${{ secrets.MONGO_PASS }} \
-        .
+        docker build -t ghcr.io/ryoukata/twitter-votes-app/twittervotes-client .
 
     - name: Push the Docker image 
       run: docker push ghcr.io/ryoukata/twitter-votes-app/twittervotes-client
