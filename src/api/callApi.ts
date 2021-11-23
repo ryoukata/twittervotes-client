@@ -4,9 +4,9 @@ import {Handler} from '../type/ApiType';
 type RequestMethod = 'GET' | 'POST' | 'DELETE';
 
 const URL = {
-  host: "http://localhost:8080",
-  path: "polls",
-  queryString: "?key=abc123"
+  host: "http://" + process.env.REACT_APP_DOMAIN,
+  path: process.env.REACT_APP_APP_PATH,
+  queryString: process.env.REACT_APP_QUERY
 }
 
 const getUrl = (pathParam?: string) => URL.host + "/" + URL.path + "/" + (pathParam ? pathParam+"/": "") + URL.queryString;

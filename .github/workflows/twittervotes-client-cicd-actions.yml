@@ -1,0 +1,26 @@
+name: twittervotes-client-cicd-actions
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-container-image-and-push-image:
+    name: job build-container-image-push-image
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Login GitHub Registory
+      run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+
+    - name: Build the Docker image 
+      run: |
+        docker build -t ghcr.io/ryoukata/twitter-votes-app/twittervotes-client .
+
+    - name: Push the Docker image 
+      run: docker push ghcr.io/ryoukata/twitter-votes-app/twittervotes-client
